@@ -155,7 +155,7 @@ def scrapGoogleImagesURLs(SCRAPE_URL,WEB_DRIVER, timeDelay, imageCount, scrapeFo
             downloadImage(url, shortenString(url,16), scrapeFolder)
 
 def BulkDownload(binFileName, folderName):
-    URLSet = loadPickledFile(binFileName)
+    URLSet = loadPickledFile(getFilePath("Bin Files", binFileName))
     if len(URLSet) == 0:
         print(f"{Fore.RED} Bin file is empty or does not exist!")
         return
