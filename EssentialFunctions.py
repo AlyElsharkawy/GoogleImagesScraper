@@ -153,3 +153,12 @@ def scrapGoogleImagesURLs(SCRAPE_URL,WEB_DRIVER, timeDelay, imageCount, scrapeFo
         print(f"{Fore.GREEN}A total of {len(imageURLs) + 1} URLs have been succesfully scraped and saved to {scrapeFileName}.bin, and they will now be downloaded")
         for url in mergsedSet:
             downloadImage(url, shortenString(url,16), scrapeFolder)
+
+def BulkDownload(binFileName, folderName):
+    URLSet = loadPickledFile(binFileName)
+    if len(URLSet) == 0:
+        print(f"{Fore.RED} Bin file is empty or does not exist!")
+        return
+    for url in URLSet:
+        downloadImage(url, shortenString(url,16), folderName)
+    
