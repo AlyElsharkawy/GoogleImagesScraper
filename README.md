@@ -18,7 +18,7 @@ This python program scrapes Google Images. It also supports downloading images i
 **Bulk Downloading:**
 Repeat the same steps as stated in the previous section but with a few differences.
 1. The amount of images to scrape must be 0. If this is not 0, then the program will scrape normally.
-2. You must agree to outputs being saved into a folder. The name provided is the name of the directory to which the images will be downloaded to. If it does not exist, then it will be created.
+2. You must agree to outputs being saved into a folder. The name provided is the name of the directory to which the images will be downloaded to. If it does not exist, then it will be created. If you refuse and do not provide a name then the images will be downloaded to a folder called "NoNameProvided."
 3. The delay value and input URL values will be ignored.
 4. The name of the .bin file is the .bin file whose contents will be downloaded.
 
