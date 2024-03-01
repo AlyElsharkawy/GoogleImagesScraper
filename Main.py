@@ -1,5 +1,5 @@
 #This code was created by Aly Mohamed Elsharkawy
-#Development began on February 5, 2024 and ended on February 10, 2024
+#Development began on February 5, 2024 and ended on February 10, 2024 with final edits done on 3/1/2024
 
 import MiscFunctions
 import EssentialFunctions
@@ -38,8 +38,13 @@ if __name__ == "__main__":
     print(f"{Fore.BLUE}\nKeep in mind that the program will slow down near the end of the search results page. This is not a problem in the program itself. Rather, it is because there are lots of duplicate results in the end that must be skipped.")
     sleep(2)
     Fore.RESET
-    WEB_DRIVER = webdriver.Chrome()
-    EssentialFunctions.scrapGoogleImagesURLs(SCRAPE_URL, WEB_DRIVER, SCRAPE_TIME_DELAY, SCRAPE_AMOUNT, SCRAPE_DIR, SCRAPE_FILE)
-    #close web driver after succesful scraping
-    WEB_DRIVER.quit()
-    
+    if SCRAPE_AMOUNT != 0:
+        WEB_DRIVER = webdriver.Chrome()
+        EssentialFunctions.scrapGoogleImagesURLs(SCRAPE_URL, WEB_DRIVER, SCRAPE_TIME_DELAY, SCRAPE_AMOUNT, SCRAPE_DIR, SCRAPE_FILE)
+        #close web driver after succesful scraping
+        WEB_DRIVER.quit()
+    elif SCRAPE_AMOUNT == 0:
+        if SCRAPE_DIR == None:
+            SCRAPE_DIR = "NoNameProvided"
+        print(f"{Fore.BLUE} Bulk downloading all URLs in {SCRAPE_FILE}.bin!")
+        EssentialFunctions.BulkDownload(SCRAPE_FILE, SCRAPE_DIR)
