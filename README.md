@@ -19,7 +19,8 @@ This python program scrapes Google Images. It also supports downloading images i
 Repeat the same steps as stated in the previous section but with a few differences.
 1. The amount of images to scrape must be 0. If this is not 0, then the program will scrape normally.
 2. You must agree to outputs being saved into a folder. The name provided is the name of the directory to which the images will be downloaded to. If it does not exist, then it will be created.
-3. The name of the .bin file is the .bin file whose contents will be downloaded.
+3. The delay value and input URL values will be ignored.
+4. The name of the .bin file is the .bin file whose contents will be downloaded.
 
 ## Installation
 Installation is a very simple. It consists of cloning the repo, installing dependencies, and then running the program (`main.py`). This assumes that you are already on Windows with Google Chrome installed.
